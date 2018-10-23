@@ -1,10 +1,12 @@
-//your variable declarations here
+Spaceship player;
 public void setup() 
 {
-  //your code here
+  	player = new Spaceship();
 }
 public void draw() 
 {
-  //your code here
+  	player.show();
 }
-
+public void keyPressed(){
+	
+}

@@ -1,36 +1,66 @@
 class Spaceship extends Floater  
 {   
 	Spaceship(){
-
+        corners = 12;
+        xCorners = new int[corners];
+        yCorners = new int[corners];
+        xCorners[0] = 16;
+        yCorners[0] = 0;
+        xCorners[1] = 4;
+        yCorners[1] = 4;
+        xCorners[2] = 4;
+        yCorners[2] = 20;
+        xCorners[3] = 0;
+        yCorners[3] = 20;
+        xCorners[4] = -4;
+        yCorners[4] = 8;
+        xCorners[5] = -4;
+        yCorners[5] = 4;
+        xCorners[6] = -8;
+        yCorners[6] = 0;
+        xCorners[7] = -4;
+        yCorners[7] = -4;
+        xCorners[8] = -4;
+        yCorners[8] = -8;
+        xCorners[9] = 0;
+        yCorners[9] = -20;
+        xCorners[10] = 4;
+        yCorners[10] = -20;
+        xCorners[11] = 4;
+        yCorners[11] = -4;
+        myColor = color(255);
+        myCenterX = 50;
+        myCenterY = 50;
+        myDirectionX = myDirectionY = myPointDirection = 0; 
 	}
-    abstract public void setX(int x){
+    public void setX(int x){
     	myCenterX = x;
     }  
-    abstract public int getX(){
-    	return myCenterX;
+    public int getX(){
+    	return (int)myCenterX;
     }   
-    abstract public void setY(int y){
+    public void setY(int y){
   	  myCenterY = y;
     }   
-    abstract public int getY(){
-   	 return myCenterY;
+    public int getY(){
+   	 return (int)myCenterY;
     }   
-    abstract public void setDirectionX(double x){
+    public void setDirectionX(double x){
     	myDirectionX = x;
     }   
-    abstract public double getDirectionX(){
+    public double getDirectionX(){
     	return myDirectionX;
     }   
-    abstract public void setDirectionY(double y){
+    public void setDirectionY(double y){
     	myDirectionY = y;
     }   
-    abstract public double getDirectionY(){
+    public double getDirectionY(){
     	return myDirectionY;
     }   
-    abstract public void setPointDirection(int degrees){
+    public void setPointDirection(int degrees){
     	myPointDirection = degrees;
     }   
-    abstract public double getPointDirection(){
+    public double getPointDirection(){
     	return myPointDirection;
     } 
 }
