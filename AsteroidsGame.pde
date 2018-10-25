@@ -1,12 +1,20 @@
 Spaceship player;
+Star[] stars = new Star[100];
 public void setup() 
 {
+	rectMode(CENTER);
 	size(500, 500);
   	player = new Spaceship();
+  	for (int i = 0; i < stars.length; ++i) {
+  		stars[i] = new Star();
+  	}
 }
 public void draw() 
 {
-	background(197);
+	background(0);
+	for (int i = 0; i < stars.length; ++i) {
+		stars[i].show();
+	}
   	player.show();
   	player.move();
 }
