@@ -9,9 +9,9 @@ class Spaceship extends Floater
         xCorners[1] = 4;
         yCorners[1] = 4;
         xCorners[2] = 4;
-        yCorners[2] = 20;
+        yCorners[2] = 16;
         xCorners[3] = 0;
-        yCorners[3] = 20;
+        yCorners[3] = 16;
         xCorners[4] = -3;
         yCorners[4] = 8;
         xCorners[5] = -3;
@@ -23,9 +23,9 @@ class Spaceship extends Floater
         xCorners[8] = -3;
         yCorners[8] = -8;
         xCorners[9] = 0;
-        yCorners[9] = -20;
+        yCorners[9] = -16;
         xCorners[10] = 4;
-        yCorners[10] = -20;
+        yCorners[10] = -16;
         xCorners[11] = 4;
         yCorners[11] = -4;
         myColor = color(255);

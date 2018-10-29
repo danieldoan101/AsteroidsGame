@@ -7,7 +7,8 @@ class Star //note that this class does NOT extend Floater
   	myCenterY = Math.random()*500;
   }
   public void show(){
-  	fill((int)Math.random()*256, (int)Math.random()*256, (int)Math.random()*256);
+  	stroke(0);
+  	fill((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
   	rect((float)myCenterX, (float)myCenterY, (float)mySize, (float)mySize);
   }
 }
