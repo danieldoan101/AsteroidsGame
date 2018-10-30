@@ -1,5 +1,5 @@
 Spaceship player;
-Star[] stars = new Star[300];
+Star[] stars = new Star[1111];
 public void setup() 
 {
 	rectMode(CENTER);
@@ -22,7 +22,7 @@ public void keyPressed(){
 	if (key == '8'){player.accelerate(.1);}
 	if (key == '4') {player.turn(-5);}
 	if (key == '6') {player.turn(5);}
-	if (key == '5') {
+	if (key == '2') {
 		player.myCenterX = Math.random()*501;
 		player.myCenterY = Math.random()*501;
 		player.myDirectionX = player.myDirectionY = 0;
