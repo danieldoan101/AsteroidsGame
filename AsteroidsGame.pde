@@ -16,18 +16,6 @@ public void draw()
 		stars[i].show();
 	}
 	player.show();
-	stroke(255);
-	if ((player.getDirectionX()!=0)||(player.getDirectionY()!=0)) {
-		translate((float)player.getX(), (float)player.getY());
-		rotate((float)(player.getPointDirection()*(Math.PI/180)));
-		line(player.getX()-9, player.getY()-12, player.getX()-5, player.getY()-12);
-		line(player.getX()-9, player.getY()-8, player.getX()-5, player.getY()-8);
-		line(player.getX()-9, player.getY()+8, player.getX()-5, player.getY()+8);
-		line(player.getX()-9, player.getY()+12, player.getX()-5, player.getY()+12);
-		line(player.getX()-14, player.getY(), player.getX()-10, player.getY());
-		rotate(-1*(float)(player.getPointDirection()*(Math.PI/180)));
-		translate(-1*(float)player.getX(), -1*(float)player.getY());
-	}
   	player.move();
 }
 public void keyPressed(){
