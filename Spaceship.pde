@@ -1,6 +1,8 @@
 class Spaceship extends Floater  
 {   
+    private boolean isAccelerating;
 	Spaceship(){
+        isAccelerating = false;
         corners = 12;
         xCorners = new int[corners];
         yCorners = new int[corners];
@@ -29,8 +31,8 @@ class Spaceship extends Floater
         xCorners[11] = 4;
         yCorners[11] = -4;
         myColor = 255;
-        myCenterX = 50;
-        myCenterY = 50;
+        myCenterX = 250;
+        myCenterY = 250;
         myDirectionX = myDirectionY = myPointDirection = 0; 
 	}
     public void setX(int x){
@@ -63,6 +65,12 @@ class Spaceship extends Floater
     public double getPointDirection(){
     	return myPointDirection;
     } 
+    public void setAcceleration(boolean accelerating){
+        isAccelerating = accelerating;
+    }
+    public boolean getAcceleration(){
+        return isAccelerating;
+    }
     public void show ()  //Draws the floater at the current position  
   {             
     fill(myColor);   
@@ -86,7 +94,7 @@ class Spaceship extends Floater
     endShape(CLOSE);
     
     //draw rockets here
-    if ((myDirectionX!=0)||(myDirectionY!=0)) {
+    if (isAccelerating) {
         stroke(255);
         line(-9, -12, -5, -12);
         line(-9, -8, -5, -8);

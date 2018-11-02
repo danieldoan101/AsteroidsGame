@@ -17,9 +17,13 @@ public void draw()
 	}
 	player.show();
   	player.move();
+  	player.setAcceleration(false);
 }
 public void keyPressed(){
-	if (key == '8'){player.accelerate(.1);}
+	if (key == '8'){
+		player.accelerate(.1);
+		player.setAcceleration(true);
+	}
 	if (key == '4') {player.turn(-5);}
 	if (key == '6') {player.turn(5);}
 	if (key == '2') {
