@@ -1,7 +1,7 @@
 class Star //note that this class does NOT extend Floater
 {
   private double mySize, myCenterX, myCenterY;
-  Star(){
+  public Star(){
   	mySize = Math.random()*3;
   	myCenterX = Math.random()*500;
   	myCenterY = Math.random()*500;
