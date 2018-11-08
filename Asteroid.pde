@@ -1,11 +1,23 @@
-/*
+
 class Asteroid extends Floater{
 	private int myRotationSpeed;
 	public Asteroid () {
 		myRotationSpeed = (int)(Math.random()*3)-1;
-		corners = 0;
+		corners = 6;
         xCorners = new int[corners];
         yCorners = new int[corners];
+        xCorners[0] = 3;
+        yCorners[0] = -4;
+        xCorners[1] = 5;
+        yCorners[1] = 0;
+        xCorners[2] = 3;
+        yCorners[2] = 4;
+        xCorners[3] = -3;
+        yCorners[3] = 4;
+        xCorners[4] = -5;
+        yCorners[4] = 0;
+        xCorners[5] = -3;
+        yCorners[5] = -4;
         myColor = 176;
         myCenterX = 50;
         myCenterY = 50;
@@ -43,4 +55,4 @@ class Asteroid extends Floater{
 	      myCenterY = height;    
     	}   
   	}
-}*/
+}
