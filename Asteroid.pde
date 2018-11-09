@@ -2,26 +2,28 @@
 class Asteroid extends Floater{
 	private int myRotationSpeed;
 	public Asteroid () {
-		myRotationSpeed = (int)(Math.random()*3)-1;
+		myRotationSpeed = (int)(Math.random()*5)-2;
 		corners = 6;
         xCorners = new int[corners];
         yCorners = new int[corners];
-        xCorners[0] = 3;
-        yCorners[0] = -4;
-        xCorners[1] = 5;
+        xCorners[0] = 6;
+        yCorners[0] = -8;
+        xCorners[1] = 10;
         yCorners[1] = 0;
-        xCorners[2] = 3;
-        yCorners[2] = 4;
-        xCorners[3] = -3;
-        yCorners[3] = 4;
-        xCorners[4] = -5;
+        xCorners[2] = 6;
+        yCorners[2] = 8;
+        xCorners[3] = -6;
+        yCorners[3] = 8;
+        xCorners[4] = -10;
         yCorners[4] = 0;
-        xCorners[5] = -3;
-        yCorners[5] = -4;
+        xCorners[5] = -6;
+        yCorners[5] = -8;
         myColor = 176;
         myCenterX = 50;
         myCenterY = 50;
-        myDirectionX = myDirectionY = myPointDirection = 0;
+        myDirectionX = Math.random();
+        myDirectionY = Math.random();
+        myPointDirection = (int)(Math.random()*361);
 	}
     public void setX(int x){myCenterX = x;}  
     public int getX(){return (int)myCenterX;}   
@@ -33,15 +35,12 @@ class Asteroid extends Floater{
     public double getDirectionY(){return myDirectionY;}   
     public void setPointDirection(int degrees){myPointDirection = degrees;}   
     public double getPointDirection(){return myPointDirection;}
-    public void move ()   //move the floater in the current direction of travel{      
-    //change the x and y coordinates by myDirectionX and myDirectionY       
-    	myCenterX += myDirectionX;    
+    public void move (){      
+     	myCenterX += myDirectionX;    
     	myCenterY += myDirectionY;     
 
-    //turns the asteroid
     	myPointDirection += myRotationSpeed;
-
-    //wrap around screen    
+   
     	if(myCenterX >width){     
     	  myCenterX = 0;    
     	}    
