@@ -1,6 +1,6 @@
 Spaceship player;
 Star[] stars = new Star[1111];
-Asteroid[] asteroids = new Asteroid[15];
+ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 public void setup() 
 {
 	rectMode(CENTER);
@@ -9,8 +9,8 @@ public void setup()
   	for (int i = 0; i < stars.length; ++i) {
   		stars[i] = new Star();
   	}
-  	for (int i = 0; i < asteroids.length; ++i) {
-  		asteroids[i] = new Asteroid();
+  	for (int i = 0; i < 15; ++i) {
+  		asteroids.add(new Asteroid());
   	}
 }
 public void draw() 
@@ -19,9 +19,14 @@ public void draw()
 	for (int i = 0; i < stars.length; ++i) {
 		stars[i].show();
 	}
-	for (int i = 0; i < asteroids.length; ++i) {
-		asteroids[i].show();
-		asteroids[i].move();
+	for (int i = 0; i < asteroids.size(); ++i) {
+		asteroids.get(i).show();
+		asteroids.get(i).move();
+		if(dist((asteroids.get(i).getX(), asteroids.get(i).getY(), player.getX(), player.getY())<=12)){
+			asteroids.get(i).setX(1000);
+			asteroids.remove(i);
+			i--;
+		}
 	}
 	player.show();
   	player.move();
