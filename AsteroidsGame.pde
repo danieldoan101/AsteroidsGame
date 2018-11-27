@@ -1,5 +1,5 @@
 Spaceship player;
-Star[] stars = new Star[1111];
+Star[] stars = new Star[2000];
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 public void setup() 
 {
@@ -22,10 +22,11 @@ public void draw()
 	for (int i = 0; i < asteroids.size(); ++i) {
 		asteroids.get(i).show();
 		asteroids.get(i).move();
-		if(dist((asteroids.get(i).getX(), asteroids.get(i).getY(), player.getX(), player.getY())<=12)){
+		if(dist(asteroids.get(i).getX(), asteroids.get(i).getY(), player.getX(), player.getY())<=12){
 			asteroids.get(i).setX(1000);
 			asteroids.remove(i);
 			i--;
+			asteroids.add(new Asteroid());
 		}
 	}
 	player.show();
