@@ -35,14 +35,14 @@ public void draw()
 }
 public void keyPressed(){
 	if (key == '8'){
-		player.accelerate(.1);
+		player.accelerate(.3);
 		player.setAcceleration(true);
 	}
-	if (key == '4') {player.turn(-5);}
-	if (key == '6') {player.turn(5);}
+	if (key == '4') {player.turn(-15);}
+	if (key == '6') {player.turn(15);}
 	if (key == '2') {
-		player.myCenterX = Math.random()*501;
-		player.myCenterY = Math.random()*501;
+		player.myCenterX = Math.random()*500;
+		player.myCenterY = Math.random()*500;
 		player.myDirectionX = player.myDirectionY = 0;
 		player.myPointDirection = (int)(Math.random()*361);
 	}
