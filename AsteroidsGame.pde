@@ -1,6 +1,7 @@
 Spaceship player;
 Star[] stars = new Star[2000];
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
+Bullet bullets = new Bullet(player);
 public void setup() 
 {
 	rectMode(CENTER);
@@ -22,7 +23,7 @@ public void draw()
 	for (int i = 0; i < asteroids.size(); ++i) {
 		asteroids.get(i).show();
 		asteroids.get(i).move();
-		if(dist(asteroids.get(i).getX(), asteroids.get(i).getY(), player.getX(), player.getY())<=12){
+		if(dist(asteroids.get(i).getX(), asteroids.get(i).getY(), player.getX(), player.getY())<=28){
 			asteroids.get(i).setX(1000);
 			asteroids.remove(i);
 			i--;
@@ -30,6 +31,7 @@ public void draw()
 		}
 	}
 	player.show();
+	bullets.show();
   	player.move();
   	player.setAcceleration(false);
 }
