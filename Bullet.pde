@@ -1,5 +1,5 @@
 class Bullet extends Floater{
-
+	
 	public Bullet (Spaceship theShip) {
         corners = 0;
         xCorners = new int[corners];
@@ -7,7 +7,6 @@ class Bullet extends Floater{
 		myCenterX = theShip.getX();
 		myCenterY = theShip.getY();
 		myPointDirection = theShip.getPointDirection();
-		double dRadians = myPointDirection*(Math.PI/180);
 		myDirectionX = 5*Math.cos(dRadians);
 		myDirectionY = 5*Math.sin(dRadians);
 		myColor = 255;

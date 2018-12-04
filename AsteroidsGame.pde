@@ -1,11 +1,12 @@
 Spaceship player;
 Star[] stars = new Star[2000];
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
-Bullet bullets = new Bullet(player);
+Bullet bulletTest;
 public void setup() 
 {
 	rectMode(CENTER);
 	size(500, 500);
+	bulletTest = new Bullet(player);
   	player = new Spaceship();
   	for (int i = 0; i < stars.length; ++i) {
   		stars[i] = new Star();
@@ -31,17 +32,17 @@ public void draw()
 		}
 	}
 	player.show();
-	bullets.show();
+	bulletTest.show();
   	player.move();
   	player.setAcceleration(false);
 }
 public void keyPressed(){
 	if (key == '8'){
-		player.accelerate(.3);
+		player.accelerate(.2);
 		player.setAcceleration(true);
 	}
-	if (key == '4') {player.turn(-15);}
-	if (key == '6') {player.turn(15);}
+	if (key == '4') {player.turn(-10);}
+	if (key == '6') {player.turn(10);}
 	if (key == '2') {
 		player.myCenterX = Math.random()*500;
 		player.myCenterY = Math.random()*500;
