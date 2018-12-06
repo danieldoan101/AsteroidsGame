@@ -1,4 +1,5 @@
 Spaceship player;
+int score;
 Star[] stars = new Star[2000];
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 ArrayList <Bullet> bullets = new ArrayList <Bullet>();
@@ -7,6 +8,7 @@ public void setup()
 	rectMode(CENTER);
 	size(500, 500);
 	player = new Spaceship();
+	score = 0;
   	for (int i = 0; i < stars.length; ++i) {
   		stars[i] = new Star();
   	}
@@ -23,9 +25,10 @@ public void draw()
 	for (int i = 0; i < asteroids.size(); ++i) {
 		asteroids.get(i).show();
 		asteroids.get(i).move();
-		if(dist(asteroids.get(i).getX(), asteroids.get(i).getY(), player.getX(), player.getY())<=28){
+		if(dist(asteroids.get(i).getX(), asteroids.get(i).getY(), player.getX(), player.getY()) <= 28){
 			asteroids.get(i).setX(1000);
 			asteroids.remove(i);
+			score--;
 			i--;
 			asteroids.add(new Asteroid());
 		}
@@ -33,10 +36,20 @@ public void draw()
 	for(int i = 0; i < bullets.size(); ++i) {
 		bullets.get(i).show();
 		bullets.get(i).move();
+		for(int j = 0; j < asteroids.size(); ++j){
+			if(dist(asteroids.get(j).getX(), asteroids.get(j).getY(), bullets.get(i).getX(), bullets.get(i).getY()) <= 20){
+				asteroids.remove(j);
+				bullets.remove(i);
+				score++;
+				asteroids.add(new Asteroid());
+				break;
+			}
+		}
 	}
 	player.show();
   	player.move();
   	player.setAcceleration(false);
+  	
 }
 public void keyPressed(){
 	if (key == '5') {bullets.add(new Bullet(player));}
