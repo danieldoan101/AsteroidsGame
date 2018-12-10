@@ -48,6 +48,9 @@ public void draw()
 	}
 	player.show();
   	player.move();
+  	fill(255);
+  	textSize(20);
+  	text("Score: " + score, 0, 20);
   	player.setAcceleration(false);
   	
 }
